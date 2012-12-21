@@ -1,0 +1,26 @@
+<project name="test-system.exit">
+
+	<!-- property
+		examples.jar 
+		is set by unit test
+	-->	
+	
+	<fold name="fold">
+		<description>second map</description>
+		<input>
+			<file path="does_not_matter"/>
+		</input>
+		<output>
+			<file path="does_not_matter1"/>
+		</output>
+		<mapreduce jar="${test.jar}" main="com.codeminders.hamake.testjar.DummyClassThatDependsOnJars">
+			<classpath>
+				<fileset path="${test.classpath}" mask="*.jar" />
+			</classpath>
+			<parameter>
+				<literal value="textInput.txt" />
+			</parameter>
+		</mapreduce>
+	</fold>
+
+</project>

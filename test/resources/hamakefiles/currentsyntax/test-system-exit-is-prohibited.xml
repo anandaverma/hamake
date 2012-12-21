@@ -1,0 +1,23 @@
+<project name="test-classpath">
+
+	<!-- property
+		examples.jar 
+		is set by unit test
+	-->	
+	
+	<fold name="fold">
+		<description>second map</description>
+		<input>
+			<file path="does_not_matter"/>
+		</input>
+		<output>
+			<file path="does_not_matter1"/>
+		</output>
+		<mapreduce jar="${test.jar}" main="com.codeminders.hamake.testjar.DummyJobThatCallsSystemExit">
+			<parameter>
+				<literal value="does_not_matter" />
+			</parameter>
+		</mapreduce>
+	</fold>
+
+</project>

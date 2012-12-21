@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="class-size-median">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/hamake-2.0b-4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/hamake-examples-2.0b-4.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

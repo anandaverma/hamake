@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="test">
+
+    <property name="output.dir"  value="${env:RUN_FOLDER}/result"/>
+    <property name="data.dir"     value="${env:RUN_FOLDER}/data"/>
+    <property name="scripts.dir" value="${env:RUN_FOLDER}/scripts"/>
+
+    <foreach name="jar-listings">
+        <input>
+            <fileset path="${data.dir}" mask="*.jar"/>
+        </input>
+        <output>
+            <file id="jarListing" path="${output.dir}/jar-listings/${foreach:filename}"/>
+        </output>
+        <mapreduce jar="${env:RUN_FOLDER}/hamake-examples-${hamake:version}.jar" main="com.codeminders.hamake.examples.JarListing">
+          <parameter>
+              <literal value="${foreach:path}"/>
+          </parameter>
+          <parameter>
+              <reference idref="jarListing"/>
+          </parameter>
+        </mapreduce>
+    </foreach>
+
+    <foreach name="filter-listing">
+        <input>
+            <fileset path="${output.dir}/jar-listings"/>
+        </input>
+        <output>
+            <file id="filterListing" path="${output.dir}/jar-listings-filtered/${foreach:filename}"/>
+        </output>
+        <mapreduce jar="${env:RUN_FOLDER}/hamake-examples-${hamake:version}.jar" main="com.codeminders.hamake.examples.JarListingFilter">
+          <parameter>
+            <literal value="${foreach:path}"/>
+          </parameter>
+          <parameter>
+            <reference idref="filterListing"/>
+          </parameter>
+        </mapreduce>
+    </foreach>
+
+    <fold name="histogram">
+        <input>
+            <file id="histogramIn" path="${output.dir}/jar-listings-filtered"/>
+        </input>
+        <output>
+            <file id="histogramOut" path="${output.dir}/class-size-histogram"/>
+        </output>
+        <mapreduce jar="${env:RUN_FOLDER}/hamake-examples-${hamake:version}.jar" main="com.codeminders.hamake.examples.ClassSizeHistogram">
+          <parameter>
+            <reference idref="histogramIn"/>
+          </parameter>
+          <parameter>
+            <reference idref="histogramOut"/>
+          </parameter>
+        </mapreduce>
+    </fold>
+
+    <fold name="median">
+        <input>
+            <file id="medianIn" path="${output.dir}/class-size-histogram"/>
+        </input>
+        <output>
+            <file id="medianOut" path="${output.dir}/class-size-median-bin"/>
+        </output>
+        <pig script="${scripts.dir}/median.pig">
+          <parameter name="infile">
+            <reference idref="medianIn"/>
+          </parameter>
+          <parameter name="outfile">
+            <reference idref="medianOut"/>
+          </parameter>
+        </pig>
+    </fold>
+
+</project>

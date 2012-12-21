@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/ehcache-core-2.1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-logging-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-logging-api-1.0.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/slf4j-api-1.5.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-lang-2.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-compress-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/junit-4.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-io-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/dist/examples/class-size-median/data/commons-cli-1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
