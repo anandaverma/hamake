@@ -294,7 +294,11 @@
 
 	</target>
 	
-	<target name="all" depends="dist" description="build all" />
+	<target name="all" depends="dist" description="build all" >
+	    <zip destfile="hamake-${hamake.version}-${release.number}.zip"
+		 basedir="dist"
+		 update="true"/>
+	</target>
 
 	<!-- ============================= IVY ========================================================== -->
 	<target name="ivy-probe-antlib">
