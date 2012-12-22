@@ -51,20 +51,27 @@
       name="pig"
       rev="${pig.version}"
       conf="common->master"/>
-    <dependency org="jline"
-      name="jline"
-      rev="${jline.version}"
-      conf="common->default"/>
+
+    <dependency org="jline" name="jline" rev="${jline.version}" conf="common->default"/>
     <dependency org="org.antlr" name="antlr" rev="${antlr.version}" conf="common->default"/>
     <dependency org="org.antlr" name="antlr-runtime" rev="${antlr.version}" conf="common->default"/>
     <dependency org="org.antlr" name="ST4" rev="${stringtemplate.version}" conf="common->default"/>
-    <dependency org="junit"
-      name="junit"
-      rev="${junit.version}"
-      conf="common->master"/>
-    <dependency org="net.sf.ehcache"
-     name="ehcache-core"
-      rev="${ehcache.version}"
-      conf="common->default"/>  
+    <dependency org="jdiff" name="jdiff" rev="${jdiff.version}" conf="common->default"/>
+    <dependency org="xerces" name="xerces" rev="${xerces.version}" conf="common->default"/>
+    <dependency org="com.jcraft" name="jsch" rev="${jsch.version}" conf="common->default"/>
+    <dependency org="jline" name="jline" rev="${jline.version}" conf="common->default"/>
+    <dependency org="net.java.dev.javacc" name="javacc" rev="${javacc.version}" conf="common->default"/>
+    <dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="${jackson.version}" conf="common->default"/>
+    <dependency org="org.codehaus.jackson" name="jackson-core-asl" rev="${jackson.version}" conf="common->default"/>
+    <dependency org="joda-time" name="joda-time" rev="${joda-time.version}" conf="common->default"/>
+    <dependency org="commons-lang" name="commons-lang" rev="${commons-lang.version}" conf="common->default"/>
+    <dependency org="com.google.guava" name="guava" rev="${guava.version}" conf="common->default" />
+    <dependency org="org.python" name="jython" rev="${jython.version}" conf="common->default"/>
+    <dependency org="rhino" name="js" rev="${rhino.version}" conf="common->default"/>
+
+
+    <dependency org="junit" name="junit" rev="${junit.version}" conf="common->master"/>
+    <dependency org="net.sf.ehcache" name="ehcache-core" rev="${ehcache.version}" conf="common->default"/>  
+
   </dependencies>
 </ivy-module>
