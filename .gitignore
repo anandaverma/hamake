@@ -1,8 +1,6 @@
 /build/
 /dist/
 .svn/
-
 /build.num
 /com.codeminders-hamake-common.html
 /ivy-report.css
-/lib/
