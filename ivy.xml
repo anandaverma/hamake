@@ -43,6 +43,14 @@
       name="commons-compress"
       rev="${commons-compress.version}"
       conf="common->default"/>
+    <dependency org="org.apache.hadoop"
+      name="hadoop-core"
+      rev="${hadoop-core.version}"
+      conf="common->default"/>
+    <dependency org="org.apache.pig"
+      name="pig"
+      rev="${pig.version}"
+      conf="common->master"/>
     <dependency org="junit"
       name="junit"
       rev="${junit.version}"
