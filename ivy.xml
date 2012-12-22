@@ -51,7 +51,7 @@
       name="pig"
       rev="${pig.version}"
       conf="common->master"/>
-    <dependency org="org.sonatype.jline"
+    <dependency org="jline"
       name="jline"
       rev="${jline.version}"
       conf="common->master"/>
