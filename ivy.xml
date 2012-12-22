@@ -54,7 +54,10 @@
     <dependency org="jline"
       name="jline"
       rev="${jline.version}"
-      conf="common->master"/>
+      conf="common->default"/>
+    <dependency org="org.antlr" name="antlr" rev="${antlr.version}" conf="common->default"/>
+    <dependency org="org.antlr" name="antlr-runtime" rev="${antlr.version}" conf="common->default"/>
+    <dependency org="org.antlr" name="ST4" rev="${stringtemplate.version}" conf="common->default"/>
     <dependency org="junit"
       name="junit"
       rev="${junit.version}"
